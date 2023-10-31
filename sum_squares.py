@@ -1,12 +1,15 @@
+from time import time
+from math import *
+
 def list_nums(n):
     lst = []
-    for a in range(int(n**0.5)+1):
+    for a in range(floor(sqrt(n))+1):
         na = n - a**2
-        for b in range(a, int(na**0.5)+1):
+        for b in range(a, floor(sqrt(na))+1):
             nb = na - b**2
-            for c in range(b, int(nb**0.5)+1):
+            for c in range(b, floor(sqrt(nb))+1):
                 nc = nb - c**2
-                d = int(nc**0.5)
+                d = floor(sqrt(nc))
                 if d**2 == nc:
                     lst.append(a)
                     lst.append(b)
@@ -14,3 +17,9 @@ def list_nums(n):
                     lst.append(d)
                     if len(lst) == 4:
                         return lst
+
+# how to measure how long your function takes to run:
+t1 = time()  # get start time
+print(list_nums(512))  # run function
+t2 = time()  # get end time
+print(f"This took {t2 - t1} seconds")  # print result
