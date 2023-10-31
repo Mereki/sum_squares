@@ -1,6 +1,7 @@
 from time import time
 from math import *
 
+# d >= c >= b >= a
 def list_nums(n):
     lst = []
     for a in range(floor(sqrt(n))+1):
