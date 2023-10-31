@@ -23,10 +23,12 @@ def count_sets(n):
                 d = floor(sqrt(nc))
                 if d**2 == nc:
                     count += 1
-    return count              
+    return count - 1       
     
 # how to measure how long your function takes to run:
 t1 = time()  # get start time
 print(list_nums(512))  # run function
 t2 = time()  # get end time
 print(f"This took {t2 - t1} seconds")  # print result
+
+print(count_sets(16)) # [0,0,0,4] or [2,2,2,2]
