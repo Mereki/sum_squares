@@ -1,9 +1,7 @@
 from time import time
 from math import *
 
-# d >= c >= b >= a
 def list_nums(n):
-    lst = []
     for a in range(floor(sqrt(n))+1):
         na = n - a**2
         for b in range(a, floor(sqrt(na))+1):
@@ -12,12 +10,7 @@ def list_nums(n):
                 nc = nb - c**2
                 d = floor(sqrt(nc))
                 if d**2 == nc:
-                    lst.append(a)
-                    lst.append(b)
-                    lst.append(c)
-                    lst.append(d)
-                    if len(lst) == 4:
-                        return lst
+                    return [a, b, c, d]
 
 # how to measure how long your function takes to run:
 t1 = time()  # get start time
